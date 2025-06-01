@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Sign Up</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  
+    * {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+    }
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background:color
+}
+
+.container {
+  background:#e3e6f3;
+  padding: 30px;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 500px;
+  border: 1px solid #ddd; /* Optional: actual border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow around the border */
+  
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 20px;
+  font-family:sans-serif;
+  color: #00bfa6;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  border-color:#00bfa6;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover{
+ transform: translate (-10px,-20px);
+  
+} 
+
+button {
+  width: 20%;
+  padding:5px;
+  background:blue;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background: #00bfa6;
+  display: block;
+  margin: 0 auto;
+}
+
+
+button:hover {
+  background:lightblue;
+  
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+a {
+  color:#00bfa6;
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box" id="form-box">
+      <h2 id="form-title">Login to your Account</h2>
+      
+      <form id="auth-form">
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Username" required />
+        </div>
+        
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" required />
+        </div>
+        
+        
+        <div class="input-group" id="confirm-password-group" style="display: none;">
+          <input type="password" id="confirm-password" placeholder="Confirm Password" />
+        </div>
+        
+        <button type="submit" id="submit-btn">Login</button>
+      </form>
+      
+      <p id="toggle-text">Don't have an account? 
+      <a href="#" id="toggle-link">Sign Up</a></p>
+    </div>
+    
+    
+  </div>
+ 
+  <script src="script.js"></script>
+  
+  <script>
+    const formTitle = document.getElementById("form-title");
+const authForm = document.getElementById("auth-form");
+const toggleText = document.getElementById("toggle-text");
+const toggleLink = document.getElementById("toggle-link");
+const confirmPasswordGroup = document.getElementById("confirm-password-group");
+const submitBtn = document.getElementById("submit-btn");
+
+let isLogin = true;
+
+toggleLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  isLogin = !isLogin;
+
+  if (isLogin) {
+    formTitle.textContent = "Login";
+    confirmPasswordGroup.style.display = "none";
+    submitBtn.textContent = "Login";
+    toggleText.innerHTML = `Don't have an account? <a href="#" id="toggle-link">Sign Up</a>`;
+  } else {
+    formTitle.textContent = "Sign Up";
+    confirmPasswordGroup.style.display = "block";
+    submitBtn.textContent = "Sign Up";
+    toggleText.innerHTML = `Already have an account? <a href="./login.html" id="toggle-link">Login</a>`;
+  }
+ 
+  
+  document.getElementById("toggle-link").addEventListener("click", toggleLink.click);
+});
+
+authForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  if (!isLogin) {
+    const confirmPassword = document.getElementById("confirm-password").value;
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+    alert(`Signed up as ${username}`);
+  } else {
+    alert(`Logged in as ${username}`);
+    window.location.href = "./HomePage1.html";
+  }
+
+  authForm.reset();
+});
+  </script>
+</body>
+</html>
+
+

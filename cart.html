@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Cart</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+
+<style>
+#cart {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#cart h2 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+}
+
+#cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+#cart-table thead tr {
+  background-color: #f2f2f2;
+}
+
+#cart-table th, #cart-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+  color: #444;
+}
+
+#cart-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+#cart-table img {
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.qty-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.qty-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.remove-btn {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #cc0000;
+}
+
+#cart-summary {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+#cart-summary h3 {
+  margin-bottom: 15px;
+}
+
+#checkout-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#checkout-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #cart-table thead {
+    display: none;
+  }
+
+  #cart-table, #cart-table tbody, #cart-table tr, #cart-table td {
+    display: block;
+    width: 100%;
+  }
+
+  #cart-table tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  #cart-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  #cart-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    padding-left: 10px;
+    font-weight: 600;
+    text-align: left;
+    color: #333;
+  }
+}
+</style>
+</head>
+<body>
+  <section id="header">
+    <a href="#"><img src="./IMG/LOGO2.png" alt="Logo" id="Logo" /></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="HomePage1.html">Home</a></li>
+        <li><a href="./shop.html">Shop</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contacts.html">Contact</a></li>
+        <li><a href="./profile.html">Profile</a></li>
+        <li id="lg-bag">
+          <a class="active" href="./cart.html"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+        </li>
+        <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+    </div>
+  </section>
+
+  <section id="cart" class="section-p1">
+    <h2>Your Cart</h2>
+    <table id="cart-table" width="100%">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Size</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+    </table>
+    <div id="cart-summary" style="text-align: right; margin-top: 20px;">
+      <h3>Subtotal: &#8369;<span id="subtotal">0</span></h3>
+      <button id="checkout-btn" class="normal">Checkout</button>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+</html>

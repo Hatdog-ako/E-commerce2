@@ -1,0 +1,372 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+}
+
+body {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+
+/* Hero Section */
+#hero {
+  background: #e8f6ea;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+#hero h1 {
+  font-size: 48px;
+  color: #088178;
+}
+
+#hero h2 {
+  font-size: 36px;
+}
+
+#hero p {
+  margin: 10px 0 20px;
+  color: #555;
+}
+
+#hero button {
+  padding: 10px 20px;
+  border: none;
+  background: #088178;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#hero button:hover {
+  background: #065e5b;
+}
+
+/* Main Profile Section */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.form-section,
+.info-section {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form-section h2,
+.info-section h2 {
+  margin-bottom: 20px;
+}
+
+.form-section form input,
+.form-section form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-section form button {
+  background-color: #088178;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-section form button:hover {
+  background-color: #065e5b;
+}
+
+#preview {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Banner */
+#banner {
+  text-align: center;
+  background: #088178;
+  color: white;
+  padding: 40px 20px;
+}
+
+#banner h2 span {
+  color: #ffdf00;
+}
+
+#banner .normal {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: white;
+  color: #088178;
+  border: none;
+  font-weight: 600;
+}
+
+/* Newsletter */
+#newsletter {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background: #041e42;
+  color: white;
+  flex-wrap: wrap;
+}
+
+#newsletter .newstext h4 {
+  font-size: 22px;
+}
+
+#newsletter .form input {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#newsletter .form .normal {
+  padding: 10px 20px;
+  background: #088178;
+  color: white;
+  border: none;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 40px;
+  background: #e3e6f3;
+}
+
+footer .col {
+  margin-bottom: 20px;
+  min-width: 200px;
+}
+
+footer h4 {
+  margin-bottom: 15px;
+}
+
+footer a {
+  display: block;
+  color: #222;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+footer .icon i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+footer .copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #navbar {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #newsletter {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+    </style>
+</head>
+<body>
+    
+
+    <section id="header">
+        <a href="#"><img src="./IMG/LOGO2.png" alt="Logo" id="Logo"></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="HomePage1.html">Home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contacts.html">Contact</a></li>
+                <li><a class="active" href="./profile.html">Profile</a></li>
+                <li id="lg-bag"><a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+        <div id="mobile">
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    
+    <section id="page-header">
+        <h2>Your Information</h2>
+        <p>Update your info</p>
+    </section>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Profile Form -->
+    <section class="form-section">
+      <h2>My Profile</h2>
+      <form onsubmit="updateProfile(event)">
+        <img src="./IMG/user.png" alt="Profile Picture" id="preview">
+        <input type="file" accept="image/*" onchange="loadFile(event)">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="tel" id="contactNumber" placeholder="Contact Number" required>
+        <input type="email" id="emailAddress" placeholder="Email Address" required>
+        <input type="text" id="address" placeholder="Address" required>
+        <button type="submit">Save</button>
+        <button type="button" onclick="location.href='login.html'">Log out</button>
+      </form>
+    </section>
+
+    <!-- Info Display -->
+    <section class="info-section">
+      <h2>Your Information</h2>
+      <img id="displayImage" src="./IMG/user.png" alt="Uploaded Image" style="width:100px; height:100px; border-radius:50%; object-fit:cover; display:none; margin-bottom:10px; ">
+      <p><strong>Name:</strong> <span id="displayName">-</span></p>
+      <p><strong>Contact:</strong> <span id="displayContact">-</span></p>
+      <p><strong>Email:</strong> <span id="displayEmail">-</span></p>
+      <p><strong>Address:</strong> <span id="displayAddress">-</span></p>
+    </section>
+  </div>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletter</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers.</span></p>
+        </div>
+
+        <div class="form">
+            <input type="text" placeholder="Your E-Mail Address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="./IMG/LOGO2.png" width="20%"><br><br>
+            <h4>Contact</h4>
+            <p><b>Address:</b> MacArthur Hwy 10 3000 Malolos</p>
+            <p><b>Phone:</b> +63 967 225 8233</p>
+            <p></p>
+            <div class="follow">
+                <h4>Follow us</h4>
+            <div class="icon">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-pinterest-p"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="colInstall">
+            <h4>Install app</h4>
+            <p>From App Store or Google Play</p>
+                <div class="row">
+                    <img src="./IMG/app-store-png-logo-33115.png" width="20%">
+                </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025, BSIShirt - Final Project. Ecommerce Website</p>
+        </div>
+    </footer>
+
+    <!-- Add this script right before the closing </body> tag -->
+<script>
+  const loadFile = (event) => {
+    const preview = document.getElementById('preview');
+    const displayImage = document.getElementById('displayImage');
+    const file = event.target.files[0];
+    
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        preview.src = reader.result;
+        displayImage.src = reader.result;
+        displayImage.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  
+  const updateProfile = (event) => {
+    event.preventDefault();
+    
+    document.getElementById('displayName').textContent = document.getElementById('fullName').value;
+    document.getElementById('displayContact').textContent = document.getElementById('contactNumber').value;
+    document.getElementById('displayEmail').textContent = document.getElementById('emailAddress').value;
+    document.getElementById('displayAddress').textContent = document.getElementById('address').value;
+  };
+</script>
+</body>
+</html>
